@@ -1,2 +1,5 @@
 *.html
 *.exe
+Debug/
+*opensdf
+*.sdf
