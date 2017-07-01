@@ -3,3 +3,6 @@
 Debug/
 *opensdf
 *.sdf
+*.db
+.vs/
+*.opendb
