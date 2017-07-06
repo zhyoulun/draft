@@ -36,6 +36,7 @@ BTree BTree_AlocateNode()
 
 int BTree_CheckNode(BTree T)
 {
+
 }
 
 BTree BTree_CreateEmpty()
