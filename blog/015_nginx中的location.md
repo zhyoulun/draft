@@ -153,11 +153,47 @@ location ~ /a/b/c {
 hello world
 [root@localhost ~]# curl 'http://localhost:12345/a/b/C'
 404
-[root@localhost ~]# curl 'http://localhost:12345/a/b/cd'
-404
+[root@localhost ~]# curl 'http://localhost:12345/d/a/b/c'
+hello world
+[root@localhost ~]# curl 'http://localhost:12345/a/b/c/d'
+hello world
 ```
 
 - 实验三
+
+```
+location ~ [a-z]+ {
+    echo 'hello world';
+}
+```
+
+```
+[root@localhost ~]# curl 'http://localhost:12345/abc'
+hello world
+[root@localhost ~]# curl 'http://localhost:12345/123'
+404
+[root@localhost ~]# curl 'http://localhost:12345/ABC'
+404
+```
+
+### `~*` 表示不区分大小写的正则匹配(和`~`唯一区别就是大小写)
+
+```
+location ~ [a-z]+ {
+    echo 'hello world';
+}
+```
+
+```
+[root@localhost ~]# curl 'http://localhost:12345/abc'
+hello world
+[root@localhost ~]# curl 'http://localhost:12345/123'
+404
+[root@localhost ~]# curl 'http://localhost:12345/ABC'
+hello world
+```
+
+
 
 ## 参考
 
